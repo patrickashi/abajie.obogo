@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basketball Coaching Proposal</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #1e3c72, #2a5298);
+            color: white;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            max-width: 800px;
+            margin: 50px auto;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            text-align: center;
+            color: #333;
+            transition: 0.3s ease-in-out;
+        }
+        h1 {
+            color: #1e3c72;
+        }
+        button {
+            background: #007BFF;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 20px;
+            border-radius: 6px;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        button:hover {
+            background: #0056b3;
+            transform: translateY(-2px);
+        }
+        #proposal {
+            display: none;
+            text-align: left;
+            margin-top: 20px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease-in-out;
+        }
+        .proposal-content {
+            padding: 20px;
+            background: #f4f4f4;
+            border-radius: 8px;
+            box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        ul {
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Basketball Coaching & Court Development Proposal</h1>
+        <p>Click the button below to view the proposal.</p>
+        <button onclick="showProposal()">View Proposal</button>
+
+        <div id="proposal" class="proposal-content">
+            <h2>Proposal Overview</h2>
+            <p>Dear <strong>Principal of [School Name]</strong>,</p>
+            <p>I am writing to express my interest in becoming the basketball coach/instructor for [School Name] and to propose the development of a standard basketball court to enhance sports facilities for students.</p>
+
+            <h3>Basketball Coaching & Training Program:</h3>
+            <ul>
+                <li>Structured training sessions for different skill levels.</li>
+                <li>Focus on fundamental skills, teamwork, and strategy.</li>
+                <li>Organizing inter-school competitions and internal tournaments.</li>
+            </ul>
+
+            <h3>Construction of a Standard Basketball Court:</h3>
+            <ul>
+                <li>Design and oversee the construction of a high-quality basketball court.</li>
+                <li>Ensure the court meets safety and regulatory standards.</li>
+                <li>Provide necessary equipment (hoops, markings, and flooring).</li>
+            </ul>
+
+            <h3>Financial Proposal:</h3>
+            <p>I propose a structured payment plan covering:</p>
+            <ul>
+                <li>Coaching fees (monthly/termly basis).</li>
+                <li>Cost of court construction (materials, labor, and equipment).</li>
+            </ul>
+
+            <h3>Benefits to the School:</h3>
+            <ul>
+                <li>Encourages student participation in sports and physical activities.</li>
+                <li>Enhances the school’s reputation with a modern sports facility.</li>
+                <li>Opens opportunities for inter-school tournaments.</li>
+            </ul>
+
+            <p>I would appreciate the opportunity to discuss this proposal further. Please let me know a suitable time for a meeting.</p>
+
+            <p>Best regards,</p>
+            <p><strong>Abajie Emmanuel</strong><br>
+            Professional Basketball Coach & Instructor</p>
+        </div>
+    </div>
+
+    <script>
+        function showProposal() {
+            let proposal = document.getElementById("proposal");
+            proposal.style.display = "block";
+            setTimeout(() => {
+                proposal.style.opacity = "1";
+                proposal.style.transform = "translateY(0)";
+            }, 100);
+        }
+    </script>
+
+</body>
+</html>
