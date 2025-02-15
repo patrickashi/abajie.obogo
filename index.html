@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Basketball Coaching Proposal</title>
+    <title>Basketball Coaching & Business Proposal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Poppins', sans-serif;
@@ -27,21 +28,72 @@
         h1 {
             color: #1e3c72;
         }
-        button {
-            background: #007BFF;
-            color: white;
-            border: none;
-            padding: 12px 24px;
-            font-size: 18px;
+        .btn {
+            --border-color: linear-gradient(-45deg, #ffae00, #7e03aa, #00fffb);
+            --border-width: 0.125em;
+            --curve-size: 0.5em;
+            --blur: 30px;
+            --bg: #080312;
+            --color: #afffff;
+            color: var(--color);
             cursor: pointer;
-            margin-top: 20px;
-            border-radius: 6px;
-            transition: all 0.3s ease-in-out;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+            position: relative;
+            isolation: isolate;
+            display: inline-grid;
+            place-content: center;
+            padding: 0.5em 1.5em;
+            font-size: 17px;
+            border: 0;
+            text-transform: uppercase;
+            box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.6);
+            clip-path: polygon(
+                0% var(--curve-size), var(--curve-size) 0,
+                100% 0, 100% calc(100% - var(--curve-size)),
+                calc(100% - var(--curve-size)) 100%, 0 100%
+            );
+            transition: color 250ms;
         }
-        button:hover {
-            background: #0056b3;
-            transform: translateY(-2px);
+        .btn::after, .btn::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+        }
+        .btn::before {
+            background: var(--border-color);
+            background-size: 300% 300%;
+            animation: move-bg7234 5s ease infinite;
+            z-index: -2;
+        }
+        @keyframes move-bg7234 {
+            0% { background-position: 31% 0%; }
+            50% { background-position: 70% 100%; }
+            100% { background-position: 31% 0%; }
+        }
+        .btn::after {
+            background: var(--bg);
+            z-index: -1;
+            clip-path: polygon(
+                var(--border-width) calc(var(--curve-size) + var(--border-width) * 0.5),
+                calc(var(--curve-size) + var(--border-width) * 0.5) var(--border-width),
+                calc(100% - var(--border-width)) var(--border-width),
+                calc(100% - var(--border-width)) calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
+                calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)) calc(100% - var(--border-width)),
+                var(--border-width) calc(100% - var(--border-width))
+            );
+            transition: clip-path 500ms;
+        }
+        .btn:hover::after {
+            clip-path: polygon(
+                calc(100% - var(--border-width)) calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
+                calc(100% - var(--border-width)) var(--border-width),
+                calc(100% - var(--border-width)) var(--border-width),
+                calc(100% - var(--border-width)) calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
+                calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)) calc(100% - var(--border-width)),
+                calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)) calc(100% - var(--border-width))
+            );
+        }
+        .btn:hover {
+            color: #fff;
         }
         #proposal {
             display: none;
@@ -60,14 +112,22 @@
         ul {
             padding-left: 20px;
         }
+        footer {
+            background: #1e3c72;
+            color: white;
+            padding: 15px;
+            margin-top: 30px;
+            text-align: center;
+            font-size: 14px;
+        }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h1>Basketball Coaching & Court Development Proposal</h1>
+        <h1>Basketball Coaching & Business Proposal</h1>
         <p>Click the button below to view the proposal.</p>
-        <button onclick="showProposal()">View Proposal</button>
+        <button class="btn" onclick="showProposal()">View Proposal</button>
 
         <div id="proposal" class="proposal-content">
             <h2>Proposal Overview</h2>
@@ -88,27 +148,30 @@
                 <li>Provide necessary equipment (hoops, markings, and flooring).</li>
             </ul>
 
-            <h3>Financial Proposal:</h3>
-            <p>I propose a structured payment plan covering:</p>
+            <h3>Additional Services Offered:</h3>
             <ul>
-                <li>Coaching fees (monthly/termly basis).</li>
-                <li>Cost of court construction (materials, labor, and equipment).</li>
-            </ul>
-
-            <h3>Benefits to the School:</h3>
-            <ul>
-                <li>Encourages student participation in sports and physical activities.</li>
-                <li>Enhances the school’s reputation with a modern sports facility.</li>
-                <li>Opens opportunities for inter-school tournaments.</li>
+                <li>Shawarma Business</li>
+                <li>Ice Cream Production</li>
+                <li>Popcorn Business</li>
+                <li>Restaurant Management</li>
+                <li>Professional Cooking Services</li>
+                <li>Basketball Training & Coaching</li>
+                <li>Gym Coaching</li>
+                <li>Swimming Classes</li>
+                <li>Drumming Lessons</li>
             </ul>
 
             <p>I would appreciate the opportunity to discuss this proposal further. Please let me know a suitable time for a meeting.</p>
 
             <p>Best regards,</p>
             <p><strong>Abajie Emmanuel</strong><br>
-            Professional Basketball Coach & Instructor</p>
+            Professional Basketball Coach & Entrepreneur</p>
         </div>
     </div>
+
+    <footer>
+        <p>Contact: 08165405511 | westabajie@yahoo.com | westabajie@gmail.com | abajieemmanuel@gmail.com</p>
+    </footer>
 
     <script>
         function showProposal() {
